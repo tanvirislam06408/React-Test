@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Active from '../Active';
 
-const Auctions = () => {
+const Auctions = ({handleLove}) => {
 
     const [auctions, setAuction] = useState([]);
 
@@ -13,9 +13,9 @@ const Auctions = () => {
 
     return (
         <div>
-            <div className=''>
+            <div className='bg-white p-7 rounded-3xl'>
                 {
-                    auctions.map(auction => <Active key={auction.id} auction={auction}></Active>)
+                    auctions.map(auction => <Active handleLove={handleLove} key={auction.id} auction={auction}></Active>)
                 }
             </div>
         </div>
